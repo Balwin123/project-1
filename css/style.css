@@ -1,74 +1,133 @@
-body{
-    background: darkgray;
-    padding: 0;
-    margin: 0;
-}
-#wrapper{
-    width: 1000px;
-    height: 50%;
-    background: gold;
-    margin: 0 auto;
-}
-#header{
-    background: lightgreen;
-    padding: 10px;
-    text-align: center;
-}
-#header h1{
-    margin: 40px
-}
-#menu{
-    background: gray;
-}
-#menu ul{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
 
+/* navbar styling */
+.navbar{
+    position: fixed;
+    padding: 30px 0;
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
 }
-#menu ul li{
+.navbar.sticky{
+    padding: 15px 0;
+    background: crimson;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.navbar .max-width{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo a{
+    font-size: 35px;
+    font-weight: 600;
+    color: #fff;
+}
+.navbar .logo a span{
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
     list-style: none;
     display: inline-block;
 }
-#menu ul li a{
-    display: block;
-    text-decoration: none;
-    padding: 10px;
-}
-#content{
-    width: 800px;
-    float: left;
-    min-height: 500px;
-    padding: 15px;
-    box-sizing: border-box;
-
-}
-#content h2{
-    text-align: center;
-}
-#sidebar{
-    float: right;
-    background: cornflowerblue;
-    width: 200px;
-    min-height: 500px;
-
-
-}
-#sidebar ul{
-
-}
-#sidebar ul li{
-    list-style: none;
-    padding: 10px;
-}
-#sidebar ul li a{
-    text-decoration: none;
-}
-#footer{
-    clear: both;
-    padding: 10px;
-    background: blue;
+.navbar .menu li a{
     color: #fff;
-    text-align: center;
-    font-size: 20px;
-    letter-spacing: 3px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: color 0.3s ease;
 }
+.navbar .menu li a:hover{
+    color: crimson;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/* home section style */
+.home{
+    display: flex;
+    background: url(../assets/lg.jpg);
+    -web-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+} 
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+} 
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: crimson;
+    font-weight: 500;
+}
+
+/* responsive media query starts  */
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .max-width{
+        padding: 0 50px;
+    }
+    .navbar .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+}
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
