@@ -122,6 +122,7 @@
 }
 
  /* all smilar content styling code */
+
  section{
     padding: 100px 0;
 }
@@ -130,7 +131,7 @@
 }
 .about .about-content,
 .services .service-content,
-skills .skill-content{
+.skills .skill-content{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -263,6 +264,75 @@ section .title::after{
 .skills .title::after{
     content: "What i know";
 }
+.skills .skill-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skill-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skill-content .left p{
+    align-items: justify;
+}
+.skills .skill-content .left a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.skills .skill-content .left a:hover{
+    color: crimson;
+    background: none;
+}
+.skills .skill-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skill-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skill-content .right span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.skills .skill-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills .skill-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: crimson;
+}
+.skills .skill-content .right .html::before{
+    width: 90%;
+}
+.skills .skill-content .right .css::before{
+    width: 60%;
+}
+.skills .skill-content .right .js::before{
+    width: 80%;
+}
+.skills .skill-content .right .python::before{
+    width: 50%;
+}
+.skills .skill-content .right .mysql::before{
+    width: 70%;
+}
 
 
 
@@ -351,6 +421,10 @@ section .title::after{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
+    .skills .skill-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
 }
 @media (max-width: 690px){
     .max-width{
@@ -365,6 +439,7 @@ section .title::after{
     .home .home-content a{
         font-size: 20px;
     }
+    
 }
 
 @media (max-width: 500px){
@@ -374,7 +449,8 @@ section .title::after{
     .home .home-content .text-3{
         font-size: 27px;
     }
-    .services .service-content .card{
+    .services .service-content .card,
+    .skills .skill-content .column{
         width: 100%;
     }
 }
