@@ -125,6 +125,17 @@
  section{
     padding: 100px 0;
 }
+.about, .services, .skills{
+    font-family: 'Poppins', sans-serif;;
+}
+.about .about-content,
+.services .service-content,
+skills .skill-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
 
  section .title{
     position: relative;
@@ -158,20 +169,11 @@ section .title::after{
 
 /*about section styling */
 
-.about, .services{
-    font-family: 'Poppins', sans-serif;;
-}
 
 .about .title::after{
     content: "Who i am";
 }
-.about .about-content,
-.services .service-content{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
+
 .about .about-content .left{
     width: 45%;
 }
@@ -227,9 +229,16 @@ section .title::after{
     cursor: pointer;
     transition: all 0.3s ease;
 }
+.services .service-content .card:hover{
+    background: crimson;
+}
 .services .service-content .card i{
     font-size: 50px;
     color: crimson;
+    transition: color 0.3s ease;
+}
+.services .service-content .card:hover i{
+    color: #fff;
 }
 .services .service-content .card .text{
     font-size: 25px;
@@ -248,6 +257,11 @@ section .title::after{
 .services .title::after{
     background: #111;
     content: "What i provide";
+}
+
+/* skills section styling */
+.skills .title::after{
+    content: "What i know";
 }
 
 
@@ -333,6 +347,10 @@ section .title::after{
     .about .about-content .right{
         flex: 100%;
     }
+    .services .service-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
 }
 @media (max-width: 690px){
     .max-width{
@@ -346,7 +364,6 @@ section .title::after{
     }
     .home .home-content a{
         font-size: 20px;
-        /* padding: 9px 25px; */
     }
 }
 
@@ -356,6 +373,9 @@ section .title::after{
     }
     .home .home-content .text-3{
         font-size: 27px;
+    }
+    .services .service-content .card{
+        width: 100%;
     }
 }
 
